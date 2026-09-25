@@ -1,0 +1,106 @@
+<!-- 
+Devin Chapman 
+9/25/2026
+This is a signup page for my service which offers a free tier and 2 paid tiers with various features
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | CardWell</title>
+</head>
+<body>
+    <header>
+        <a href="/"><strong>CardWell</strong></a>
+        <p><em>Already have an account?</em></p>
+        <button>Log In</button>
+    </header>
+
+    <hr>
+
+    <main>
+    <section>
+        <h1>Create your account</h1>
+        <div>Start studying and contributing cards for free, or enter a paid plan for premium features</div>
+
+        <br>
+        <button>Sign up with Google</button>
+        <button>Sign up with Apple</button>
+
+        <form>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="John Doe">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="email@example.com">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="At least 8 characters">
+            </div>
+            <div>
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Retype your password">
+            </div>
+
+            <button>Create free account</button>
+            <div>By signing up you agree to the <a href="/">[Terms of Service]</a> and <a href="/">[Privacy Policy]</a>.</div>
+        </form>
+    </section>
+
+        <hr>
+
+    <section>
+        <h3>Pricing</h3>
+        <h2>Free to start. Upgrade when you need more.</h2>
+        <div>
+            The core SRS experience - reviewing and contributing to the shared card pool - 
+            is free for everyone. Paid tiers add convenience features for more serious learners.
+        </div>
+
+        <div>
+            <h5>Free</h5>
+            <h4>$0</h4>
+            <ul>
+                <li>Unlimited reviews from the shared card pool</li>
+                <li>Import and export decks to and from Anki</li>
+                <li>Mobile friendly study page</li>
+                <li>Cross-device syncing</li>
+            </ul>
+            <button>Start Free</button>
+        </div>
+
+        <div>
+            <h5>MOST POPULAR</h5>
+            <h5>Plus</h5>
+            <h4>$5 <em>/month</em></h4>
+            <ul>
+                <li>Everything in Free</li>
+                <li>Remove banner ads</li>
+                <li>Access to custom site themes</li>
+                <li>Advanced review statistics</li>
+                <li>"Vacation Mode" to pause new reviews</li>
+            </ul>
+            <button>Start Plus</button>
+        </div>
+
+        <div>
+            <h5>Pro</h5>
+            <h4>$10 <em>/month</em></h4>
+            <ul>
+                <li>Everything in Free and Plus</li>
+                <li>Offline studying</li>
+                <li>Even more custom site themes</li>
+                <li>Import custom background images</li>
+                <li>Early access to new features</li>
+            </ul>
+            <button>Start Pro</button>
+        </div>
+    </section>
+    </main>
+</body>
+</html>
