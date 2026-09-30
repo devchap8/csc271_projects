@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Recipe</title>
+</head>
+<body>
+    <a href="./index.html">Return Home</a>
+
+    <form action="./index.html" method="POST">
+        <label for="name">Recipe name</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="ingredients">Ingredients</label>
+        <textarea for="ingredients" id="ingredients"></textarea>
+        <br>
+        <div>Difficulty</div>
+        <div>
+            <label for="easy">Easy</label>
+            <input type="radio" name="easy" id="easy">
+            <label for="medium">Medium</label>
+            <input type="radio" name="medium" id="medium">
+            <label for="hard">Hard</label>
+            <input type="radio" name="hard" id="hard">
+        </div>
+        <div>Dietary Preferences</div>
+        <div>
+            <label for="vegan">Vegan</label>
+            <input type="checkbox" name="vegan" id="vegan">
+            <label for="vegetarian">Vegetarian</label>
+            <input type="checkbox" name="vegetarian" id="vegetarian">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+<!-- Text input fields for the user’s recipe name.
+A text area for ingredients and instructions.
+Radio buttons for difficulty level (Easy, Medium, Hard).
+Checkboxes for dietary preferences (Vegetarian, Vegan, etc.).
+A submit button. When the form is submitted, it redirects back to index.html. -->
+
+</body>
+</html>
