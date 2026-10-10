@@ -6,7 +6,7 @@ the bottom based on how comfortable they feel with the word, and the card will
 appear again after the designated amount of time. When fully implemented, when
 first opening the page only the top half of the page will be shown. When the
 user thinks they know the definition, they press a button to show the back side,
-with the reading of the word, the definition, the reaing of the sentence, and
+with the reading of the word, the definition, the reading of the sentence, and
 the sentence translated. The reading of the sentence and sentence translation
 appears in the top half on this screen, but will not be shown before the 
 definition is shown. 
@@ -31,9 +31,11 @@ definition is shown.
         </div>
         <span>Card 11/120</span>
     </header>
+
     <hr>
+
     <main>
-        <div>
+        <div class="main-top">
             <div>Sentence 4 of 9 for this word</div>
             <h1>時計</h1>
             <p>この時計は十分遅れています</p>
@@ -43,29 +45,30 @@ definition is shown.
 
         <hr>
 
-        <img src="images/watch.jpg" alt="wristwatch" width="300px">
-        <h3>とけい</h3>
-        <div>clock; watch; timepiece</div>
-        <a href="./signup.html">See other example sentences for "時計" -></a>
-        
-        <br>
-        <br>
+        <div class="main-bottom">
+            <img src="images/watch.jpg" alt="wristwatch">
+            <h3>とけい</h3>
+            <div>clock; watch; timepiece</div>
+            <a href="./signup.html">See other example sentences for "時計" -></a>
+        </div>
 
-        <div>
-            <div>10m</div>
-            <button>Again</button>
-        </div>
-        <div>
-            <div>2mo</div>
-            <button>Hard</button>
-        </div>
-        <div>
-            <div>3.5mo</div>
-            <button>Good</button>
-        </div>
-        <div>
-            <div>5mo</div>
-            <button>Easy</button>
+        <div class="answer-button-container">
+            <div>
+                <div>10m</div>
+                <button id="again">Again</button>
+            </div>
+            <div>
+                <div>2mo</div>
+                <button id="hard">Hard</button>
+            </div>
+            <div>
+                <div>3.5mo</div>
+                <button id="good">Good</button>
+            </div>
+            <div>
+                <div>5mo</div>
+                <button id="easy">Easy</button>
+            </div>
         </div>
 
     </main>
@@ -74,6 +77,7 @@ definition is shown.
 
     <footer>
         <button>Edit Card</button>
+        <button>Report Card</button>
     </footer>
 </body>
 </html>

@@ -1,12 +1,19 @@
 @import url("variables.css");
 
-/* Header */
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- Header ---- */
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: var(--color-bg-alt);
+    padding: 5px;
 }
 
 header div {
@@ -14,3 +21,142 @@ header div {
     gap: 10px;
 }
 
+header a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+header span {
+    color: var(--color-text-muted);
+    font-size: smaller;
+}
+
+/* ---- Main ---- */
+
+hr {
+    opacity: 50%;
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-top, .main-bottom {
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Main Top */
+
+.main-top div {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.main-top h1 {
+    font-size: 42px;
+}
+
+/* Main bottom */
+
+main img {
+    height: 200px;
+    width: auto;
+    align-self: center;
+}
+
+.main-bottom div {
+    border: 1px solid rgba(0, 0, 0, .7);
+    width: fit-content;
+    align-self: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.main-bottom a {
+    color: var(--color-text);
+    font-size: small;
+    opacity: 70%;
+}
+
+.main-bottom a:hover {
+    color: var(--color-link-hover);
+}
+
+/* Answer Button Container */
+
+.answer-button-container {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    gap: 10px;
+}
+
+.answer-button-container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.answer-button-container > div > div {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.answer-button-container button {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, .5);
+    font-size: large;
+    padding: 5px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.answer-button-container button:hover {
+    background: var(--color-bg-alt);
+}
+
+#again {
+    color: var(--color-again);
+}
+#hard {
+    color: var(--color-hard);
+}
+#good {
+    color: var(--color-good);
+}
+#easy {
+    color: var(--color-easy);
+}
+
+/* ---- Footer ---- */
+
+footer {
+    padding: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+footer button {
+    padding: 5px 8px;
+    background-color: var(--color-bg-alt);
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: var(--color-bg-mid);
+}
