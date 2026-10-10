@@ -17,7 +17,7 @@ body {
 
 /* ---- Buttons ---- */
 
-button {
+button, .signup-link, #link-btn {
     font-size: 14px;
     font-weight: 600;
     padding: 12px 22px;
@@ -28,16 +28,17 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover, .signup-link:hover {
     background: var(--color-btn-primary-hover);
+    color: var(--color-btn-primary-text);
 }
 
-.btn-secondary {
+.btn-secondary, #link-btn {
     background: var(--color-btn-secondary-bg);
     color: var(--color-btn-secondary-text);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, #link-btn:hover {
     background: var(--color-btn-secondary-hover);
 }
 
