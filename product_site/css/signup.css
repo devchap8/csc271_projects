@@ -1,0 +1,186 @@
+@import url("variables.css");
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+/* ---- Buttons ---- */
+
+button {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: 1px solid var(--color-btn-primary-bg);
+    background: var(--color-btn-primary-bg);
+    color: var(--color-btn-primary-text);
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--color-btn-primary-hover);
+}
+
+.btn-secondary {
+    background: var(--color-btn-secondary-bg);
+    color: var(--color-btn-secondary-text);
+}
+
+.btn-secondary:hover {
+    background: var(--color-btn-secondary-hover);
+}
+
+/* ---- Header ---- */
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px max(24px, calc((100% - 1150px) / 2));
+    border-bottom: 1px solid var(--color-border);
+}
+
+header img {
+    height: 40px;
+    width: auto;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+header p {
+    font-size: 14px;
+}
+
+header a {
+    color: var(--color-link);
+    font-size: 14px;
+}
+
+header a:hover {
+    color: var(--color-link-hover);
+}
+
+/* ---- Signup form ---- */
+
+.signup {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 60px 0px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.lead {
+    color: var(--color-text-muted);
+}
+
+.signup button {
+    margin-top: 10px;
+    width: 100%;
+    
+}
+
+form {
+    margin-top: 30px;
+    text-align: left;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    background: var(--color-input-bg);
+    border: 1px solid var(--color-input-border);
+    border-radius: 6px;
+}
+
+input::placeholder {
+    color: var(--color-input-placeholder);
+}
+
+input:focus {
+    outline: 2px solid var(--color-focus);
+}
+
+.terms {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+.terms a {
+    color: var(--color-text-muted);
+}
+
+/* ---- Pricing ---- */
+
+.pricing {
+    background: var(--color-bg-alt);
+    padding: 60px max(24px, calc((100% - 1150px) / 2));
+    text-align: center;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-text-eyebrow);
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.pricing .lead {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    margin-top: 40px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+th, td {
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+th {
+    font-size: 12px;
+    color: var(--color-text-eyebrow);
+}
+
+td ul {
+    padding-left: 20px;
+    font-size: 15px;
+    color: var(--color-text-muted);
+}
+
+td li {
+    margin-bottom: 4px;
+}
