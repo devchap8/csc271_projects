@@ -22,22 +22,22 @@ definition is shown.
 </head>
 <body>
     <header>
-        <a href="./signup.html"><img src="images/cardwell_logo.png" alt="CardWell logo" height="30px"></a>
-        <div>
-            <a href="./signup.html">Home</a>
-            <a href="./signup.html">Decks</a>
-            <a href="./signup.html">Add</a>
-            <a href="./signup.html">Browse</a>
+        <a href="./signup.html"><img src="images/cardwell_logo.png" alt="CardWell logo" height="40px"></a>
+        <div class="nav-links">
+            <a class="nav-link" href="./signup.html">Home</a>
+            <a class="nav-link" href="./signup.html">Decks</a>
+            <a class="nav-link" href="./signup.html">Add</a>
+            <a class="nav-link" href="./signup.html">Browse</a>
         </div>
-        <span>Card 11/120</span>
+        <span class="card-count">Card 11/120</span>
     </header>
 
     <hr>
 
     <main>
         <div class="main-top">
-            <div>Sentence 4 of 9 for this word</div>
-            <h1>時計</h1>
+            <div class="sentence-count">Sentence 4 of 9 for this word</div>
+            <h1 class="word">時計</h1>
             <p>この時計は十分遅れています</p>
             <p>このとけいはじゅっぷんおくれています</p>
             <p>This clock is ten minutes slow.</p>
@@ -46,28 +46,28 @@ definition is shown.
         <hr>
 
         <div class="main-bottom">
-            <img src="images/watch.jpg" alt="wristwatch">
+            <img class="card-image" src="images/watch.jpg" alt="wristwatch">
             <h3>とけい</h3>
-            <div>clock; watch; timepiece</div>
-            <a href="./signup.html">See other example sentences for "時計" -></a>
+            <div class="definition">clock; watch; timepiece</div>
+            <a class="more-sentences" href="./signup.html">See other example sentences for "時計" -></a>
         </div>
 
         <div class="answer-button-container">
-            <div>
-                <div>10m</div>
-                <button id="again">Again</button>
+            <div class="answer">
+                <div class="answer-interval">10m</div>
+                <button class="answer-button" id="again">Again</button>
             </div>
-            <div>
-                <div>2mo</div>
-                <button id="hard">Hard</button>
+            <div class="answer">
+                <div class="answer-interval">2mo</div>
+                <button class="answer-button" id="hard">Hard</button>
             </div>
-            <div>
-                <div>3.5mo</div>
-                <button id="good">Good</button>
+            <div class="answer">
+                <div class="answer-interval">3.5mo</div>
+                <button class="answer-button" id="good">Good</button>
             </div>
-            <div>
-                <div>5mo</div>
-                <button id="easy">Easy</button>
+            <div class="answer">
+                <div class="answer-interval">5mo</div>
+                <button class="answer-button" id="easy">Easy</button>
             </div>
         </div>
 
@@ -76,8 +76,8 @@ definition is shown.
     <hr>
 
     <footer>
-        <button>Edit Card</button>
-        <button>Report Card</button>
+        <button class="footer-button">Edit Card</button>
+        <button class="footer-button">Report Card</button>
     </footer>
 </body>
 </html>
