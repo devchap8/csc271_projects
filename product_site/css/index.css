@@ -48,7 +48,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px max(24px, calc((100% - 1150px) / 2));
+    padding: 14px max(18px, calc((100% - 1150px) / 2));
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -161,7 +161,7 @@ h3 {
     margin-top: 40px;
 }
 
-.feature-grid > div {
+.feature-grid-sect {
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 25px;
@@ -375,4 +375,92 @@ footer li a {
 footer li a:hover {
     color: var(--color-text);
     text-decoration: underline;
+}
+
+/* ---- Responsive Design ---- */
+
+/* Tablet */
+@media (width <= 768px) {
+
+    /* Buttons */
+    button, .signup-link, #link-btn {
+        font-size: 12px;
+    }
+
+    /* Header */
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* Sections */
+    section {
+        padding: 40px max(18px, calc((100% - 1150px) / 2));
+    }
+
+    /* Hero */
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    /* Why SRS */
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid-sect {
+        display: grid;
+        grid-template-columns: 1fr 3.5fr;
+        padding: 15px;
+    }
+
+    .feature-grid img {
+        width: 80px;
+        height: 80px;
+        padding: 15px;
+    }
+
+    /* Typical SRS vs CardWell */
+    .compare-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Phone */
+@media (width <= 600px) {
+
+    /* Buttons */
+    button, .signup-link, #link-btn {
+        padding: 8px 16px;
+    }
+
+    /* Header */
+    nav {
+        gap: 8px;
+    }
+
+    /* Sections */
+    h1 {
+        font-size: 35px;
+    }
+
+    /* Why STS */
+    .feature-grid-sect {
+        gap: 4px;
+    }
+
+    .feature-grid img {
+        width: 65px;
+        height: 65px;
+    }
+
+    /* Typical SRS vs CardWell */
+    .compare-grid > div {
+        padding: 15px;
+    }
 }
