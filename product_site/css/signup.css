@@ -69,7 +69,7 @@ header a:hover {
 .signup {
     max-width: 420px;
     margin: 0 auto;
-    padding: 60px 0px;
+    padding: 60px 10px;
     text-align: center;
 }
 
@@ -183,4 +183,47 @@ td ul {
 
 td li {
     margin-bottom: 4px;
+}
+
+/* ---- Responsive Design ---- */
+
+/* Phone */
+@media (width <= 600px) {
+
+    /* Buttons */
+    button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    /* Header */
+    header {
+        gap: 10px;
+        padding: 14px max(16px, calc((100% - 1150px) / 2));
+    }
+
+    header a {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* Signup form */
+    .signup {
+        padding: 30px 10px;
+    }
+
+    /* Pricing */
+    .pricing {
+        padding: 30px max(12px, calc((100% - 1150px) / 2));
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    td ul {
+        font-size: 12px;
+        padding-left: 10px;
+    }
+
 }
