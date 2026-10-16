@@ -37,6 +37,10 @@ header {
     justify-self: end;
 }
 
+header span {
+    text-align: right;
+}
+
 /* ---- Main ---- */
 
 hr {
@@ -164,4 +168,29 @@ footer {
 
 .footer-button:hover {
     background-color: var(--color-btn-secondary-hover);
+}
+
+/* ---- Responsive Design ---- */
+
+/* Phone */
+@media (width <= 600px) {
+
+    /* Header */
+    header {
+        padding: 5px max(6px, calc((100% - 1150px) / 2));
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    /* Main */
+    .answer-button {
+        padding: 8px 14px;
+        font-size: 16px;
+    }
 }
