@@ -6,6 +6,10 @@ body {
     flex-direction: column;
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* ---- Header ---- */
 
 header {
@@ -193,4 +197,32 @@ footer {
         padding: 8px 14px;
         font-size: 16px;
     }
+}
+
+/* ---- Done Screen ---- */
+
+.done-message-container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    text-align: center;
+    gap: 10px;
+}
+
+.done-top {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.done-mid {
+    font-size: large;
+}
+
+.done-message-container a {
+    text-decoration: none;
+    color: blue;
+}
+
+.done-message-container a:hover {
+    text-decoration: underline;
 }

@@ -1,0 +1,94 @@
+AI Agent: Claude
+
+Prompt:
+(attatch studyScreen.html)
+this is the study screen for a mockup anki-like flashcard website for a school project. 
+we're adding javascript now so when the user loads the page / presses a button i want it 
+to show them a new card. take the info from the card on screen and make 20 similar cards
+ and put them in a json file. find free use images for them
+
+Response:
+I made cards.json with 20 new cards, plus a small script, download-images.js, 
+that fetches their images.
+
+The cards are everyday N5-level nouns that are easy to picture: 傘, 猫, 犬, 自転車, 電車, 
+鉛筆, 眼鏡, 靴, 帽子, 机, 椅子, 冷蔵庫, 財布, 鞄, 花, 山, 川, 魚, 林檎, 窓. Each card has the 
+same fields your page shows:
+
+JSON field	Goes into
+word	h1.word
+sentence	first <p> in .main-top
+sentenceReading, translation	the other two <p>s (hidden until reveal)
+sentenceNumber, sentenceTotal	.sentence-count
+reading	h2 in .main-bottom
+definition	.definition
+image, imageAlt	.card-image src and alt
+intervals.again/hard/good/easy	the four .answer-interval labels
+
+I wrote sentence readings in all hiragana to match your 時計 card. I left the 時計 card 
+itself out of the file, so add it if you want 21 cards.
+
+The images all come from Wikimedia Commons, where every file has a free license. 
+My workspace couldn’t connect to Wikimedia, so I couldn’t download the images for you. 
+Instead, put the script in your product_site folder and run node download-images.js 
+(needs Node 18+). It saves each image to the path in the card’s image field, like 
+images/dog.jpg, at about 800px wide.
+
+I also couldn’t open the individual file pages, so I haven’t checked each image’s exact 
+license or author. Many Commons images are CC BY, which means you need to credit the 
+author. Each card’s imageSource field links to its page. Before you submit, open each 
+link and copy the author and license into a credits section or an imageCredit field. 
+That’s also a good chance to replace any image that looks off. For example, I picked 
+the umbrella and bicycle images by title alone.
+
+Sources:
+
+Wikimedia Commons: Kimono ladies with umbrella
+Wikimedia Commons: Cute dog
+Wikimedia Commons: Mount Fuji from Nihondaira
+Wikimedia Commons: Tama River, Japan
+The imageSource field in cards.json has the link for every other image.
+
+
+
+=============
+
+In this response Claude wrote 2 files, cards.json and downloadImages.js. Since
+downloadImages.js is just a one time use node script to grab the images I imported it
+into my project, ran it with node, and deleted it, but I'll paste the code below:
+
+// Downloads the image for every card in cards.json into ./images/
+// Run from the product_site folder:  node download-images.js
+// Needs Node 18+ (built-in fetch). Images come from Wikimedia Commons,
+// where every file is free to use under its listed license.
+
+const fs = require("fs");
+const path = require("path");
+
+const cards = JSON.parse(fs.readFileSync(path.join(__dirname, "cards.json"), "utf8"));
+const WIDTH = 800; // resize on Wikimedia's side so files stay small
+
+async function download(card) {
+  // "https://commons.wikimedia.org/wiki/File:Cute_dog.jpg" -> "Cute_dog.jpg"
+  const fileName = decodeURIComponent(card.imageSource.split("/wiki/File:")[1]);
+  const url = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=${WIDTH}`;
+
+  // Wikimedia asks scripts to send a descriptive User-Agent
+  const res = await fetch(url, { headers: { "User-Agent": "CardWellSchoolProject/1.0" } });
+  if (!res.ok) throw new Error(`${res.status} for ${fileName}`);
+
+  const outPath = path.join(__dirname, card.image);
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, Buffer.from(await res.arrayBuffer()));
+  console.log(`saved ${card.image}`);
+}
+
+(async () => {
+  for (const card of cards) {
+    try {
+      await download(card);
+    } catch (err) {
+      console.error(`FAILED card ${card.id} (${card.word}): ${err.message}`);
+    }
+  }
+})();

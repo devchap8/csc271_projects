@@ -32,6 +32,7 @@ definition is shown.
     <meta property="og:image:alt" content="CardWell logo">
 
     <link rel="stylesheet" href="css/studyScreen.css">
+    <script src="studyScreen.js" type="module" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q2FC805Z7"></script>
@@ -53,25 +54,25 @@ definition is shown.
             <a class="nav-link" href="./signup.html">Add</a>
             <a class="nav-link" href="./signup.html">Browse</a>
         </div>
-        <span class="card-count">Card 11/120</span>
+        <span class="card-count">Card <span class="numCards">1</span>/<span class="totalCards">100</span></span>
     </header>
 
     <hr>
 
     <main>
         <div class="main-top">
-            <div class="sentence-count">Sentence 4 of 9 for this word</div>
+            <div class="sentence-count">Sentence <span class="sentence-number">4</span> of <span class="sentence-total">10</span> for this word</div>
             <h1 class="word">時計</h1>
-            <p>この時計は十分遅れています</p>
-            <p>このとけいはじゅっぷんおくれています</p>
-            <p>This clock is ten minutes slow.</p>
+            <p class="sentence">この時計は十分遅れています</p>
+            <p class="sentence-reading">このとけいはじゅっぷんおくれています</p>
+            <p class="sentence-translation">This clock is ten minutes slow.</p>
         </div>
 
         <hr>
 
         <div class="main-bottom">
             <img class="card-image" src="images/watch.jpg" alt="wristwatch">
-            <h2>とけい</h2>
+            <h2 class="word-reading">とけい</h2>
             <div class="definition">clock; watch; timepiece</div>
             <a class="more-sentences" href="./signup.html">See other example sentences for "時計" -></a>
         </div>
@@ -96,6 +97,12 @@ definition is shown.
         </div>
 
     </main>
+
+    <div class="done-message-container hidden">
+        <div class="done-top">Congratulations!</div>
+        <div class="done-mid">You have studied all cards in this deck today.</div>
+        <div><a href="/">Return Home</a></div>
+    </div>
 
     <hr>
 
