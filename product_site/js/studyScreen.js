@@ -16,14 +16,20 @@ const answerIntervals = Array.from(document.querySelectorAll(".answer-interval")
 const main = document.querySelector("main");
 const footer = document.querySelector("footer");
 const doneScreen = document.querySelector(".done-message-container");
-const answers = Array.from(document.querySelectorAll(".answer"));
-answers.forEach(answer => {
-    answer.childElements = {
-        answerInterval: answer.querySelector(":scope > .answer-interval"),
-        answerButton: answer.querySelector(":scope > .answer-button")
-    };
-});
+const studyAgainButton = document.querySelector(".study-again-button");
 
+function getAnswers() {
+    const answers = Array.from(document.querySelectorAll(".answer"));
+    answers.forEach(answer => {
+        answer.childElements = {
+            answerInterval: answer.querySelector(":scope > .answer-interval"),
+            answerButton: answer.querySelector(":scope > .answer-button")
+        };
+    });
+    return answers;
+}
+
+const answers = getAnswers();
 const totalCardsAmt = cards.length;
 let currCardsAmt = cards.length;
 let currCard;
@@ -83,6 +89,30 @@ function showDoneScreen() {
     doneScreen.classList.remove("hidden");
 }
 
-document.addEventListener("DOMContentLoaded", onDOMContentLoaded);
-answers.forEach(answer => answer.childElements.answerButton.addEventListener
-    ("click", () => onButtonClick(answer.childElements.answerButton.innerHTML.toLowerCase())));
+function hideDoneScreen() {
+    main.classList.remove("hidden");
+    footer.classList.remove("hidden");
+    doneScreen.classList.add("hidden");    
+}
+
+function resetCards() {
+    cards = [...cardData];
+    currCardsAmt = cards.length;   
+    numCards.innerHTML = currCardsAmt; 
+}
+
+function studyAgain() {
+    hideDoneScreen();
+    resetCards();
+    loadRandomCard();
+}
+
+function addEventListeners() {
+    document.addEventListener("DOMContentLoaded", onDOMContentLoaded);
+    answers.forEach(answer => answer.childElements.answerButton.addEventListener
+        ("click", () => onButtonClick(answer.childElements.answerButton.innerHTML.toLowerCase())));
+    studyAgainButton.addEventListener("click", studyAgain)
+}
+
+addEventListeners();
+

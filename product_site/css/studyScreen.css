@@ -221,8 +221,26 @@ footer {
 .done-message-container a {
     text-decoration: none;
     color: blue;
+    font-size: large;
 }
 
-.done-message-container a:hover {
+.done-message-container a:hover,
+.study-again-button:hover {
     text-decoration: underline;
 }
+
+.done-links-container {
+    display: flex;
+    gap: 20px;
+    margin: 10px auto;
+    
+}
+
+.study-again-button {
+    border: none;
+    background-color: transparent;
+    font-size: large;
+    color: blue;
+    cursor: pointer;
+}
+
