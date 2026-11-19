@@ -23,6 +23,7 @@ This is a signup page for my service which offers a free tier and
     <meta property="og:image:alt" content="CardWell logo">
 
     <link rel="stylesheet" href="css/signup.css">
+    <script src="./js/signup.js" type="module" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q2FC805Z7"></script>
@@ -55,19 +56,23 @@ This is a signup page for my service which offers a free tier and
         <form>
             <div>
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="John Doe">
+                <input type="text" name="name" id="name" placeholder="John Doe" data-input-num="0">
+                <div class="hidden hint">Name must not be empty</div>
             </div>
             <div>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="email@example.com">
+                <input type="email" name="email" id="email" placeholder="email@example.com" data-input-num="1">
+                <div class="hidden hint">Must be valid email address</div>
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="At least 8 characters">
+                <input type="password" name="password" id="password" placeholder="At least 8 characters" data-input-num="2">
+                <div class="hidden hint">Password must be 8 or more characters</div>
             </div>
             <div>
                 <label for="confirm-password">Confirm Password</label>
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="Retype your password">
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Retype your password" data-input-num="3">
+                <div class="hidden hint">Must match password</div>
             </div>
 
             <button>Create free account</button>

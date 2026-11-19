@@ -131,6 +131,24 @@ input:focus {
     color: var(--color-text-muted);
 }
 
+/* Form Validation */
+
+.hidden {
+    display: none;
+}
+
+.invalid-input {
+    outline: 2px solid red !important;
+}
+
+.hint {
+    font-size: smaller;
+    color: var(--color-text-muted);
+    font-style: italic;
+    opacity: .7;
+    padding: 3px 0px 0px 5px;
+}
+
 /* ---- Pricing ---- */
 
 .pricing {
